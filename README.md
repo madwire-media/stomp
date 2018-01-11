@@ -48,10 +48,26 @@ func TestStomp(t *testing.T) {
 }
 ```
 
-### provided
+## provided
+### expect
 `.ToEqual` standard `==` comparison
 
 `.ToDeepEqual` uses `reflect.DeepEqual` to do a deep comparison 
 
-*note*: Deep equality checking can be slow, and you should 
+**note**: Deep equality checking can be slow, and you should 
 read up on golang equality if you get to a point where you use this!
+
+### Describe
+Add output to `go test -v`
+
+i.e
+```
+...
+
+Describe("test answer of life-ness of 42", func() {
+  ...
+  // expect some stuff
+  ...
+})
+...
+```
