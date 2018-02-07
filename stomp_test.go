@@ -52,4 +52,7 @@ func TestAssertionMethods(t *testing.T) {
 	Describe("test deep comparison", func() {
 		expect([]int{1, 2, 3}).ToDeepEqual([]int{1, 2, 3})
 	})
+	Describe("test ToNotEqual", func() {
+		expect(2 + 2).ToNotEqual(5)
+	})
 }

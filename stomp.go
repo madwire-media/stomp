@@ -13,6 +13,7 @@ import (
 type testChain struct {
 	ToEqual     func(interface{})
 	ToDeepEqual func(interface{})
+	ToNotEqual  func(interface{})
 }
 
 // teser : used for testing `MakeExpect`
@@ -37,6 +38,11 @@ func MakeExpect(t tester) func(interface{}) *testChain {
 			ToDeepEqual: func(actual interface{}) {
 				if !reflect.DeepEqual(expected, actual) {
 					t.Errorf("[!] error: expected %v, actual: %v\n", expected, actual)
+				}
+			},
+			ToNotEqual: func(actual interface{}) {
+				if expected == actual {
+					t.Errorf("[!] error: expected %v, actual: %v  NOT to equal\n", expected, actual)
 				}
 			},
 		}
