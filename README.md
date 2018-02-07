@@ -73,3 +73,13 @@ Describe("test answer of life-ness of 42", func() {
 })
 ...
 ```
+
+### helpers
+#### SameStringSlice
+Compares 2 string slices regaurdless of order
+
+```
+s1 := []string{"camp", "band", "once", "a", "time", "once", "upon"}
+s2 := []string{"once", "upon", "a", "time", "at", "band", "camp", "once"}
+expect(stomp.SameStringSlice(s1, s2)).toEqual(true)
+```
