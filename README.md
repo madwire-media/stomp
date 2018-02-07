@@ -52,6 +52,8 @@ func TestStomp(t *testing.T) {
 ### expect
 `.ToEqual` standard `==` comparison
 
+`.ToNotEqual` standard `!=` comparison
+
 `.ToDeepEqual` uses `reflect.DeepEqual` to do a deep comparison 
 
 **note**: Deep equality checking can be slow, and you should 
