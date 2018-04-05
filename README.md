@@ -3,7 +3,7 @@
 
 put your foot down hard when it comes to `==`
 _____
-[![CircleCI](https://circleci.com/gh/madwire-media/stomp.svg?style=svg&circle-token=9ec978c27ff93132c7003c9235121f02d7839999)](https://circleci.com/gh/madwire-media/stomp)
+[![CircleCI](https://circleci.com/gh/madwire-media/stomp.svg?style=shield&circle-token=9ec978c27ff93132c7003c9235121f02d7839999)](https://circleci.com/gh/madwire-media/stomp)
 
 
 ### goals
