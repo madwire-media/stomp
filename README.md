@@ -4,6 +4,8 @@
 put your foot down hard when it comes to `==`
 _____
 [![CircleCI](https://circleci.com/gh/madwire-media/stomp.svg?style=shield&circle-token=9ec978c27ff93132c7003c9235121f02d7839999)](https://circleci.com/gh/madwire-media/stomp)
+[![GoDoc](https://godoc.org/github.com/madwire-media/stomp?status.svg)](https://godoc.org/github.com/madwire-media/stomp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## usage
 ### download
