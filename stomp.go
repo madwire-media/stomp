@@ -1,3 +1,4 @@
+// Package stomp provides assertion helpers for testing.
 package stomp
 
 import (
@@ -22,11 +23,7 @@ type tester interface {
 	Errorf(string, ...interface{})
 }
 
-// MakeExpect :: tester -> expected -> actual
-// Takes *testing.T | tester
-// example:
-//  expect := MakeExpect(t)
-//  expect(1).toEqual(1)
+// MakeExpect binds *testing.T to the returned expect function
 func MakeExpect(t tester) func(interface{}) *testChain {
 	return func(expected interface{}) *testChain {
 		return &testChain{
@@ -49,14 +46,13 @@ func MakeExpect(t tester) func(interface{}) *testChain {
 	}
 }
 
-// Describe allows you to add some output to `go test -v`
+// Describe allows you to add output to `go test -v`
 func Describe(msg string, f func()) {
 	fmt.Printf(" * %s\n", msg)
 	f()
 }
 
-// Helpers
-
+// SameStringSlice compares two string slices regardless of order
 func SameStringSlice(x, y []string) bool {
 	if len(x) != len(y) {
 		return false

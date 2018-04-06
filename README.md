@@ -79,7 +79,7 @@ Describe("test answer of life-ness of 42", func() {
 
 ### helpers
 #### SameStringSlice
-Compares 2 string slices regaurdless of order
+Compares 2 string slices regardless of order
 
 ```
 s1 := []string{"camp", "band", "once", "a", "time", "once", "upon"}
