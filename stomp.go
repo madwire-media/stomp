@@ -17,14 +17,13 @@ type testChain struct {
 	ToNotEqual  func(interface{})
 }
 
-// teser : used for testing `MakeExpect`
-// otherwise, *testing.T is used
-type tester interface {
+// Tester interface for easier testing
+type Tester interface {
 	Errorf(string, ...interface{})
 }
 
 // MakeExpect binds *testing.T to the returned expect function
-func MakeExpect(t tester) func(interface{}) *testChain {
+func MakeExpect(t Tester) func(interface{}) *testChain {
 	return func(expected interface{}) *testChain {
 		return &testChain{
 			ToEqual: func(actual interface{}) {

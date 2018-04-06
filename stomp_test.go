@@ -1,7 +1,9 @@
-package stomp
+package stomp_test
 
 import (
 	"testing"
+
+	s "github.com/madwire-media/stomp"
 )
 
 type testSpy struct {
@@ -12,8 +14,8 @@ func (t *testSpy) Errorf(s string, args ...interface{}) {
 	t.called = true
 }
 
-func testMakeExpectSpy(t tester) tester {
-	expect := MakeExpect(t)
+func testMakeExpectSpy(t s.Tester) s.Tester {
+	expect := s.MakeExpect(t)
 
 	expected := 2
 	actual := 1
@@ -24,7 +26,7 @@ func testMakeExpectSpy(t tester) tester {
 }
 
 func TestMakeExpect(t *testing.T) {
-	expect := MakeExpect(t)
+	expect := s.MakeExpect(t)
 
 	actual := 1
 	expected := 1
@@ -43,16 +45,16 @@ func TestMakeExpect(t *testing.T) {
 }
 
 func TestAssertionMethods(t *testing.T) {
-	expect := MakeExpect(t)
+	expect := s.MakeExpect(t)
 
-	Describe("test `==` comparison", func() {
+	s.Describe("test `==` comparison", func() {
 		expect(1).ToEqual(1)
 	})
 
-	Describe("test deep comparison", func() {
+	s.Describe("test deep comparison", func() {
 		expect([]int{1, 2, 3}).ToDeepEqual([]int{1, 2, 3})
 	})
-	Describe("test ToNotEqual", func() {
+	s.Describe("test ToNotEqual", func() {
 		expect(2 + 2).ToNotEqual(5)
 	})
 }
