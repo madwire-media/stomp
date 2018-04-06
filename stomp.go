@@ -23,6 +23,10 @@ type Tester interface {
 }
 
 // MakeExpect binds *testing.T to the returned expect function
+//  expect is a `testChain` instance and implements those methods:
+//    - ToEqual
+//    - ToDeepEqual
+//    - ToNotEqual
 func MakeExpect(t Tester) func(interface{}) *testChain {
 	return func(expected interface{}) *testChain {
 		return &testChain{
